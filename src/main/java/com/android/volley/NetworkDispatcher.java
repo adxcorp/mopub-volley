@@ -81,7 +81,7 @@ public class NetworkDispatcher extends Thread {
 
     @Override
     public void run() {
-        Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+        Process.setThreadPriority(Process.THREAD_PRIORITY_DEFAULT + Process.THREAD_PRIORITY_MORE_FAVORABLE);
         while (true) {
             long startTimeMs = SystemClock.elapsedRealtime();
             Request<?> request;
